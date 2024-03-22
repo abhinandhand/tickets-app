@@ -1,0 +1,16 @@
+:host {
+  font-size: 18px;
+  width: 85%;
+
+  a {
+    font-weight: bold;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    color: black;
+  }
+}

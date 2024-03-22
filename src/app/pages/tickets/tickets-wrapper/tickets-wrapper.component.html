@@ -1,0 +1,13 @@
+<div class="ticket-box">
+  <h1>Tickets</h1>
+
+  <app-add-ticket (newTicketEvent)="addNewTicket($event)"></app-add-ticket>
+
+  <app-loader
+    *ngIf="isLoading$ | async; else showNestedTicketsRoute"
+  ></app-loader>
+
+  <ng-template #showNestedTicketsRoute>
+    <router-outlet></router-outlet>
+  </ng-template>
+</div>

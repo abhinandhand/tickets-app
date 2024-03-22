@@ -1,0 +1,13 @@
+<form [formGroup]="newTicketForm" class="ticket-form" (ngSubmit)="onSubmit()">
+  <div class="description">
+    <input
+      id="description"
+      placeholder="Add ticket description"
+      type="text"
+      name="description"
+      formControlName="description"
+    />
+  </div>
+
+  <app-button>Add Ticket</app-button>
+</form>

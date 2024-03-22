@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ticket-box {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #aaaaaac7;
+  padding: 2rem;
+  color: white;
+  gap: 1rem;
+  width: 800px;
+  border-radius: 1rem;
+}
+
+app-add-ticket {
+  width: 85%;
+}

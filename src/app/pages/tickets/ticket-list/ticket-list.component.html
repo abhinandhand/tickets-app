@@ -1,0 +1,36 @@
+<input
+  type="text"
+  id="searchticket"
+  placeholder="Search ticket..."
+  [(ngModel)]="searchValue"
+  (ngModelChange)="onSearch($event)"
+/>
+
+<ul *ngIf="filteredTickets$ | async as filteredTickets">
+  <ng-container *ngIf="filteredTickets.length > 0; else noResult">
+    <li *ngFor="let ticket of filteredTickets">
+      <span (click)="navigateToTicketDetails(ticket)"
+        >Ticket: {{ ticket.id }}, {{ ticket.description }}</span
+      >
+
+      <app-select-user
+        [ticket]="ticket"
+        [users]="users$ | async"
+        (newAssigneeEvent)="onNewAssignee($event, ticket)"
+      ></app-select-user>
+
+      <div
+        *ngIf="ticket.completed; else showCompleteButton"
+        class="check"
+      ></div>
+
+      <ng-template #showCompleteButton>
+        <app-button (clickEvent)="onComplete(ticket)">Complete</app-button>
+      </ng-template>
+    </li>
+  </ng-container>
+</ul>
+
+<ng-template #noResult
+  ><span style="color: black">No tickets found. Please add one!</span>
+</ng-template>

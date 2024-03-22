@@ -1,0 +1,7 @@
+<a routerLink="/tickets/list">Back to all tickets</a>
+<div class="details" *ngIf="ticketDetails$ | async as ticket">
+  <div>Ticketid: {{ ticket.id }}</div>
+  <div>Description: {{ ticket.description }}</div>
+  <div>Assignee {{ ticket.assigneeId }}</div>
+  <div>Is Completed? {{ ticket.completed ? "Yes" : "No" }}</div>
+</div>

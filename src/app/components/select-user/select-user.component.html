@@ -1,0 +1,8 @@
+<div class="user">
+  <select [(ngModel)]="selectedUserId" (ngModelChange)="onUserChange($event)">
+    <option disabled value="null">Assign user</option>
+    <option *ngFor="let user of users" [ngValue]="user.id">
+      {{ user.name }}
+    </option>
+  </select>
+</div>
